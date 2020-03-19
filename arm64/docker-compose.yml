@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  dosgame:
+    container_name: dosgame
+    hostname: dosgame
+    image: lstcml/n1_dosgame
+    ports:
+    - 6000:6000
+    networks:
+    - dosgame_net
+    restart: always
+    volumes:
+    - ./games/data:/app/static/games/
+networks:
+  dosgame_net:

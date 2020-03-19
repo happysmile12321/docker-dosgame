@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  dosgame:
+    container_name: dosgame
+    hostname: dosgame
+    image: oldiy/dosgame-web-docker
+    ports:
+    - 262:262
+    networks:
+    - dosgame_net
+    restart: always
+    volumes:
+    - ./games/data:/app/static/games/
+networks:
+  dosgame_net:
